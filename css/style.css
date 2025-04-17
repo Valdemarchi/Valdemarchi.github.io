@@ -6273,5 +6273,20 @@ h6 {
   margin-right: 10px;
   font-size: 12px;
 }
+.single_delicious {
+  min-height: 150px;
+  margin-bottom: 20px;
+}
+
+.thumb {
+  position: relative;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+@font-face {
+  font-family: 'YourFont';
+  src: url('fonts/your-font.woff2') format('woff2');
+  font-display: swap;
+}
 
 /*# sourceMappingURL=style.css.map */
