@@ -1,0 +1,449 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Меню — Шăршă</title>
+    
+    <!-- CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+
+<body>
+    <header class="header">
+        <div class="container d-flex justify-content-between align-items-center">
+            <a href="index.html" class="logo">
+                <i class="fas fa-utensils me-2"></i>Шăршă
+            </a>
+            
+            <nav class="nav d-none d-md-block">
+                <ul class="nav__list d-flex gap-3">
+                    <li><a class="nav__link" href="index.html">
+                        <i class="fas fa-home me-1"></i>Главная
+                    </a></li>
+                    <li><a class="nav__link active" href="menu.html">
+                        <i class="fas fa-book me-1"></i>Меню
+                    </a></li>
+                    <li><a class="nav__link" href="about.html">
+                        <i class="fas fa-info-circle me-1"></i>О нас
+                    </a></li>
+                    <li><a class="nav__link" href="gallery.html">
+                        <i class="fas fa-images me-1"></i>Галерея
+                    </a></li>
+                </ul>
+            </nav>
+            
+            <div class="burger d-md-none">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Герой-секция для меню -->
+    <section class="hero">
+        <div class="container">
+            <h1 class="hero__title">Наше меню</h1>
+            <p class="hero__subtitle">Традиционная чувашская кухня с любовью приготовленная</p>
+        </div>
+    </section>
+
+    <section class="section-light">
+        <div class="container">
+            <!-- Кнопки категорий -->
+            <div class="menu-categories">
+                <button class="menu-category-btn active" data-category="all">
+                    <i class="fas fa-utensils me-2"></i>Все блюда
+                </button>
+                <button class="menu-category-btn" data-category="starters">
+                    <i class="fas fa-seedling me-2"></i>Закуски
+                </button>
+                <button class="menu-category-btn" data-category="soups">
+                    <i class="fas fa-bowl-food me-2"></i>Супы
+                </button>
+                <button class="menu-category-btn" data-category="main">
+                    <i class="fas fa-drumstick-bite me-2"></i>Основные блюда
+                </button>
+                <button class="menu-category-btn" data-category="drinks">
+                    <i class="fas fa-wine-glass-alt me-2"></i>Напитки
+                </button>
+                <button class="menu-category-btn" data-category="lunch">
+                    <i class="fas fa-box me-2"></i>Ланч-боксы
+                </button>
+                <button class="menu-category-btn" data-category="desserts">
+                    <i class="fas fa-ice-cream me-2"></i>Десерты
+                </button>
+            </div>
+
+            <!-- Секция всех блюд -->
+            <div class="menu-section active" id="all">
+                <h2 class="section-title">
+                    <i class="fas fa-utensils me-3"></i>Все блюда
+                </h2>
+                <p class="section-subtitle">Полное меню нашего ресторана с традиционными и авторскими блюдами</p>
+                
+                <div class="menu-grid">
+                    <!-- Закуски -->
+                    <div class="menu-card" data-category="starters">
+                        <img src="images/menu/dish3.jpg" alt="Шартан" class="menu-card__image">
+                        <div class="menu-card__content">
+                            <div class="menu-card__header">
+                                <h3>
+                                    <i class="fas fa-sausage me-2"></i>Шартан
+                                </h3>
+                                <span class="menu-card__price">
+                                    <i class="fas fa-tag me-1"></i>320 ₽
+                                </span>
+                            </div>
+                            <p>Традиционная чувашская колбаса из свинины с натуральными специями и чесноком</p>
+                            <div class="menu-card__footer">
+                                <span class="menu-card__weight">
+                                    <i class="fas fa-weight me-1"></i>250 г
+                                </span>
+                                <button class="menu-card__btn">
+                                    <i class="fas fa-plus me-1"></i>Добавить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="starters">
+                        <img src="images/menu/dish1.jpg" alt="Хуплу" class="menu-card__image">
+                        <div class="menu-card__content">
+                            <div class="menu-card__header">
+                                <h3>
+                                    <i class="fas fa-drumstick-bite me-2"></i>Хуплу
+                                </h3>
+                                <span class="menu-card__price">
+                                    <i class="fas fa-tag me-1"></i>190 ₽
+                                </span>
+                            </div>
+                            <p>Пирожки с мясной начинкой, приготовленные по старинному рецепту в дровяной печи</p>
+                            <div class="menu-card__footer">
+                                <span class="menu-card__weight">
+                                    <i class="fas fa-weight me-1"></i>2 шт (180 г)
+                                </span>
+                                <button class="menu-card__btn">
+                                    <i class="fas fa-plus me-1"></i>Добавить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Супы -->
+                    <div class="menu-card" data-category="soups">
+                        <img src="images/menu/dish2.jpg" alt="Шурпе" class="menu-card__image">
+                        <div class="menu-card__content">
+                            <div class="menu-card__header">
+                                <h3>
+                                    <i class="fas fa-bowl-food me-2"></i>Шурпе
+                                </h3>
+                                <span class="menu-card__price">
+                                    <i class="fas fa-tag me-1"></i>260 ₽
+                                </span>
+                            </div>
+                            <p>Ароматный наваристый суп из баранины с картофелем, морковью и традиционными пряностями</p>
+                            <div class="menu-card__footer">
+                                <span class="menu-card__weight">
+                                    <i class="fas fa-weight me-1"></i>350 г
+                                </span>
+                                <button class="menu-card__btn">
+                                    <i class="fas fa-plus me-1"></i>Добавить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="soups">
+                        <img src="images/menu/dish4.jpg" alt="Яшка" class="menu-card__image">
+                        <div class="menu-card__content">
+                            <div class="menu-card__header">
+                                <h3>
+                                    <i class="fas fa-mortar-pestle me-2"></i>Яшка
+                                </h3>
+                                <span class="menu-card__price">
+                                    <i class="fas fa-tag me-1"></i>220 ₽
+                                </span>
+                            </div>
+                            <p>Супец с домашней лапшой, курицей и свежей зеленью по-чувашски</p>
+                            <div class="menu-card__footer">
+                                <span class="menu-card__weight">
+                                    <i class="fas fa-weight me-1"></i>300 г
+                                </span>
+                                <button class="menu-card__btn">
+                                    <i class="fas fa-plus me-1"></i>Добавить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Основные блюда -->
+                    <div class="menu-card" data-category="main">
+                        <img src="images/menu/dish5.jpg" alt="Тултармаш" class="menu-card__image">
+                        <div class="menu-card__content">
+                            <div class="menu-card__header">
+                                <h3>
+                                    <i class="fas fa-utensil-spoon me-2"></i>Тултармаш
+                                </h3>
+                                <span class="menu-card__price">
+                                    <i class="fas fa-tag me-1"></i>450 ₽
+                                </span>
+                            </div>
+                            <p>Фаршированные картофелем голубцы в виноградных листьях с мясом и рисом</p>
+                            <div class="menu-card__footer">
+                                <span class="menu-card__weight">
+                                    <i class="fas fa-weight me-1"></i>280 г
+                                </span>
+                                <button class="menu-card__btn">
+                                    <i class="fas fa-plus me-1"></i>Добавить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="main">
+                        <img src="images/menu/dish6.jpg" alt="Аш" class="menu-card__image">
+                        <div class="menu-card__content">
+                            <div class="menu-card__header">
+                                <h3>
+                                    <i class="fas fa-drumstick-bite me-2"></i>Аш
+                                </h3>
+                                <span class="menu-card__price">
+                                    <i class="fas fa-tag me-1"></i>380 ₽
+                                </span>
+                            </div>
+                            <p>Тушеная баранина с овощами и картофелем в глиняном горшочке</p>
+                            <div class="menu-card__footer">
+                                <span class="menu-card__weight">
+                                    <i class="fas fa-weight me-1"></i>320 г
+                                </span>
+                                <button class="menu-card__btn">
+                                    <i class="fas fa-plus me-1"></i>Добавить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Напитки -->
+                    <div class="menu-card" data-category="drinks">
+                        <img src="images/menu/drink1.webp" alt="Квас" class="menu-card__image">
+                        <div class="menu-card__content">
+                            <div class="menu-card__header">
+                                <h3>
+                                    <i class="fas fa-glass-whiskey me-2"></i>Домашний квас
+                                </h3>
+                                <span class="menu-card__price">
+                                    <i class="fas fa-tag me-1"></i>150 ₽
+                                </span>
+                            </div>
+                            <p>Традиционный чувашский квас на ржаном хлебе с изюмом и мятой</p>
+                            <div class="menu-card__footer">
+                                <span class="menu-card__weight">
+                                    <i class="fas fa-weight me-1"></i>0.5 л
+                                </span>
+                                <button class="menu-card__btn">
+                                    <i class="fas fa-plus me-1"></i>Добавить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="drinks">
+                        <img src="images/menu/drink2.jpg" alt="Морс" class="menu-card__image">
+                        <div class="menu-card__content">
+                            <div class="menu-card__header">
+                                <h3>
+                                    <i class="fas fa-wine-bottle me-2"></i>Морс брусничный
+                                </h3>
+                                <span class="menu-card__price">
+                                    <i class="fas fa-tag me-1"></i>180 ₽
+                                </span>
+                            </div>
+                            <p>Освежающий морс из лесной брусники с медом и лимоном</p>
+                            <div class="menu-card__footer">
+                                <span class="menu-card__weight">
+                                    <i class="fas fa-weight me-1"></i>0.5 л
+                                </span>
+                                <button class="menu-card__btn">
+                                    <i class="fas fa-plus me-1"></i>Добавить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Десерты -->
+                    <div class="menu-card" data-category="desserts">
+                        <img src="images/menu/dessert1.jpg" alt="Йава" class="menu-card__image">
+                        <div class="menu-card__content">
+                            <div class="menu-card__header">
+                                <h3>
+                                    <i class="fas fa-cookie-bite me-2"></i>Йава
+                                </h3>
+                                <span class="menu-card__price">
+                                    <i class="fas fa-tag me-1"></i>210 ₽
+                                </span>
+                            </div>
+                            <p>Старинная чувашская выпечка из дрожжевого или пресного теста в виде шариков с медовой начинкой</p>
+                            <div class="menu-card__footer">
+                                <span class="menu-card__weight">
+                                    <i class="fas fa-weight me-1"></i>150 г
+                                </span>
+                                <button class="menu-card__btn">
+                                    <i class="fas fa-plus me-1"></i>Добавить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="desserts">
+                        <img src="images/menu/dessert2.jpg" alt="Хуран кукли" class="menu-card__image">
+                        <div class="menu-card__content">
+                            <div class="menu-card__header">
+                                <h3>
+                                    <i class="fas fa-pie-chart me-2"></i>Хуран кукли
+                                </h3>
+                                <span class="menu-card__price">
+                                    <i class="fas fa-tag me-1"></i>240 ₽
+                                </span>
+                            </div>
+                            <p>Чувашское национальное блюдо, представляющее собой вареники или небольшие пирожки с различными начинками, которые варят в кипящей воде</p>
+                            <div class="menu-card__footer">
+                                <span class="menu-card__weight">
+                                    <i class="fas fa-weight me-1"></i>120 г
+                                </span>
+                                <button class="menu-card__btn">
+                                    <i class="fas fa-plus me-1"></i>Добавить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                
+
+                    <!-- Ланч-боксы -->
+                    <div class="menu-card" data-category="lunch">
+                        <div class="menu-card__content">
+                            <div class="menu-card__header">
+                                <h3>
+                                    <i class="fas fa-briefcase me-2"></i>Бизнес-ланч
+                                </h3>
+                                <span class="menu-card__price">
+                                    <i class="fas fa-tag me-1"></i>490 ₽
+                                </span>
+                            </div>
+                            <p>Суп + основное блюдо + салат + напиток + хлеб</p>
+                            <div class="menu-card__footer">
+                                <span class="menu-card__weight">
+                                    <i class="fas fa-weight me-1"></i>Полный обед
+                                </span>
+                                <button class="menu-card__btn">
+                                    <i class="fas fa-plus me-1"></i>Добавить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card" data-category="lunch">
+                        <div class="menu-card__content">
+                            <div class="menu-card__header">
+                                <h3>
+                                    <i class="fas fa-child me-2"></i>Детский ланч
+                                </h3>
+                                <span class="menu-card__price">
+                                    <i class="fas fa-tag me-1"></i>350 ₽
+                                </span>
+                            </div>
+                            <p>Котлетка с пюре + салат + сок + маленький десерт</p>
+                            <div class="menu-card__footer">
+                                <span class="menu-card__weight">
+                                    <i class="fas fa-weight me-1"></i>Для детей
+                                </span>
+                                <button class="menu-card__btn">
+                                    <i class="fas fa-plus me-1"></i>Добавить
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Специальное предложение -->
+                <div class="special-offer">
+                    <h3>
+                        <i class="fas fa-gift me-2"></i>Семейный обед
+                    </h3>
+                    <p>При заказе на 4 персоны — десерт в подарок!</p>
+                    <button class="btn-accent">
+                        <i class="fas fa-shopping-cart me-2"></i>Заказать сейчас
+                    </button>
+                </div>
+            </div>
+
+            <!-- Отдельные секции категорий (изначально скрыты) -->
+            <div class="menu-section" id="starters">
+                <!-- Контент закусок -->
+            </div>
+            
+            <div class="menu-section" id="soups">
+                <!-- Контент супов -->
+            </div>
+            
+            <!-- и так далее для остальных категорий -->
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <a href="index.html" class="logo text-white">
+                        <i class="fas fa-utensils me-2"></i>Шӑршă
+                    </a>
+                    <p class="mt-2 mb-0 text-white opacity-75">Кафе чувашской кухни</p>
+                </div>
+                
+                <div class="col-md-4 text-center mb-3 mb-md-0">
+                    <p class="text-white opacity-75 mb-0">
+                        <i class="fas fa-map-marker-alt me-2"></i>г. Чебоксары, ул. Чувашская, 15
+                    </p>
+                </div>
+                
+                <div class="col-md-4 text-md-end">
+                    <div class="footer-contacts">
+                        <p class="mb-1">
+                            <i class="fas fa-phone me-2"></i>+7 (999) 999-99-99
+                        </p>
+                        <p class="mb-0">
+                            <i class="fas fa-envelope me-2"></i>sharsha@cafe.ru
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+            <hr class="my-4 opacity-25">
+            
+            <div class="row">
+                <div class="col-12 text-center">
+                    <p class="footer-text mb-0">
+                        © 2025 «Шӑршă». Все права защищены. 
+                        <span class="d-block d-md-inline mt-2 mt-md-0">
+                            <i class="fas fa-heart text-danger mx-1"></i>
+                            Сделано с любовью к чувашской культуре
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/burger-menu.js"></script>
+    <script src="js/menu.js"></script>
+</body>
+</html>

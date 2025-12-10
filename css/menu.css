@@ -1,0 +1,289 @@
+/* menu.css - Стили для страницы меню */
+
+/* === СТИЛИ КАТЕГОРИЙ === */
+.menu-categories {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 50px;
+}
+
+.menu-category-btn {
+    background: var(--white);
+    color: var(--text-dark);
+    border: 2px solid var(--light-color);
+    padding: 12px 24px;
+    border-radius: 50px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.menu-category-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+    transform: translateY(-2px);
+}
+
+.menu-category-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+/* === СЕТКА МЕНЮ === */
+.menu-section {
+    margin-bottom: 60px;
+    display: none;
+    animation: fadeIn 0.5s ease;
+}
+
+.menu-section.active {
+    display: block;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.section-subtitle {
+    text-align: center;
+    color: var(--text-dark);
+    font-size: 18px;
+    margin-bottom: 40px;
+    opacity: 0.8;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* === КАРТОЧКИ БЛЮД === */
+.menu-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.menu-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    transition: all 0.4s ease;
+    position: relative;
+    height: 100%;
+}
+
+.menu-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 12px 30px rgba(124, 31, 31, 0.15);
+}
+
+.menu-card__image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.menu-card__content {
+    padding: 25px;
+}
+
+.menu-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 15px;
+}
+
+.menu-card h3 {
+    color: var(--primary-color);
+    font-size: 22px;
+    margin: 0;
+    flex: 1;
+}
+
+.menu-card__price {
+    font-size: 24px;
+    font-weight: 700;
+    color: var(--primary-color);
+    background: var(--secondary-color);
+    padding: 5px 15px;
+    border-radius: 8px;
+    margin-left: 15px;
+}
+
+.menu-card p {
+    color: var(--text-dark);
+    line-height: 1.6;
+    margin-bottom: 20px;
+    opacity: 0.8;
+}
+
+.menu-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+}
+
+.menu-card__weight {
+    color: var(--text-dark);
+    opacity: 0.7;
+    font-size: 14px;
+}
+
+.menu-card__btn {
+    background: var(--primary-color);
+    color: var(--white);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.menu-card__btn:hover {
+    background: var(--accent-color);
+    transform: scale(1.05);
+}
+
+/* === СПЕЦИАЛЬНЫЕ ПРЕДЛОЖЕНИЯ === */
+.special-offer {
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: var(--white);
+    border-radius: 16px;
+    padding: 30px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.special-offer h3 {
+    color: var(--white);
+    font-size: 28px;
+    margin-bottom: 15px;
+}
+
+.special-offer p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 20px;
+}
+
+/* === АДАПТИВНОСТЬ === */
+@media (max-width: 767px) {
+    .menu-categories {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .menu-category-btn {
+        width: 100%;
+        max-width: 250px;
+    }
+    
+    .menu-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .menu-card__header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .menu-card__price {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+}
+
+@media (min-width: 768px) and (max-width: 991px) {
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* === ИКОНКИ КАТЕГОРИЙ === */
+.menu-category-btn i {
+    margin-right: 8px;
+    font-size: 18px;
+}
+
+/* === ПИКТОГРАММЫ ДЛЯ КАТЕГОРИЙ === */
+.category-icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    vertical-align: middle;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* menu.css - Дополнения для иконок */
+
+/* Иконки в заголовках карточек */
+.menu-card h3 i {
+    color: var(--primary-color);
+    font-size: 18px;
+}
+
+/* Иконки в ценах */
+.menu-card__price i {
+    font-size: 14px;
+    opacity: 0.8;
+}
+
+/* Иконки в весе */
+.menu-card__weight i {
+    font-size: 12px;
+    margin-right: 5px;
+    opacity: 0.7;
+}
+
+/* Иконки в кнопках добавления */
+.menu-card__btn i {
+    font-size: 12px;
+}
+
+/* Иконки в специальном предложении */
+.special-offer h3 i {
+    color: white;
+}
+
+/* Иконки в кнопках категорий */
+.menu-category-btn i {
+    font-size: 16px;
+    margin-right: 8px;
+}
+
+/* Адаптивность для иконок */
+@media (max-width: 767px) {
+    .menu-category-btn i {
+        margin-right: 5px;
+        font-size: 14px;
+    }
+    
+    .menu-card h3 i {
+        font-size: 16px;
+    }
+}
+
+/* Стили для кнопок добавления */
+.menu-card__btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
