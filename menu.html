@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Меню — Шăршă</title>
-    
-    <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/normalize.css">
@@ -14,14 +12,12 @@
     <link rel="stylesheet" href="css/menu.css">
     <link rel="stylesheet" href="css/responsive.css">
 </head>
-
 <body>
     <header class="header">
         <div class="container d-flex justify-content-between align-items-center">
             <a href="index.html" class="logo">
                 <i class="fas fa-utensils me-2"></i>Шăршă
             </a>
-            
             <nav class="nav d-none d-md-block">
                 <ul class="nav__list d-flex gap-3">
                     <li><a class="nav__link" href="index.html">
@@ -38,7 +34,6 @@
                     </a></li>
                 </ul>
             </nav>
-            
             <div class="burger d-md-none">
                 <span></span>
                 <span></span>
@@ -47,7 +42,6 @@
         </div>
     </header>
 
-    <!-- Герой-секция для меню -->
     <section class="hero">
         <div class="container">
             <h1 class="hero__title">Наше меню</h1>
@@ -57,7 +51,6 @@
 
     <section class="section-light">
         <div class="container">
-            <!-- Кнопки категорий -->
             <div class="menu-categories">
                 <button class="menu-category-btn active" data-category="all">
                     <i class="fas fa-utensils me-2"></i>Все блюда
@@ -82,7 +75,6 @@
                 </button>
             </div>
 
-            <!-- Секция всех блюд -->
             <div class="menu-section active" id="all">
                 <h2 class="section-title">
                     <i class="fas fa-utensils me-3"></i>Все блюда
@@ -90,7 +82,6 @@
                 <p class="section-subtitle">Полное меню нашего ресторана с традиционными и авторскими блюдами</p>
                 
                 <div class="menu-grid">
-                    <!-- Закуски -->
                     <div class="menu-card" data-category="starters">
                         <img src="images/menu/dish3.jpg" alt="Шартан" class="menu-card__image">
                         <div class="menu-card__content">
@@ -137,7 +128,6 @@
                         </div>
                     </div>
 
-                    <!-- Супы -->
                     <div class="menu-card" data-category="soups">
                         <img src="images/menu/dish2.jpg" alt="Шурпе" class="menu-card__image">
                         <div class="menu-card__content">
@@ -184,7 +174,6 @@
                         </div>
                     </div>
 
-                    <!-- Основные блюда -->
                     <div class="menu-card" data-category="main">
                         <img src="images/menu/dish5.jpg" alt="Тултармаш" class="menu-card__image">
                         <div class="menu-card__content">
@@ -231,7 +220,6 @@
                         </div>
                     </div>
 
-                    <!-- Напитки -->
                     <div class="menu-card" data-category="drinks">
                         <img src="images/menu/drink1.webp" alt="Квас" class="menu-card__image">
                         <div class="menu-card__content">
@@ -278,7 +266,6 @@
                         </div>
                     </div>
                     
-                    <!-- Десерты -->
                     <div class="menu-card" data-category="desserts">
                         <img src="images/menu/dessert1.jpg" alt="Йава" class="menu-card__image">
                         <div class="menu-card__content">
@@ -324,9 +311,7 @@
                             </div>
                         </div>
                     </div>
-                
 
-                    <!-- Ланч-боксы -->
                     <div class="menu-card" data-category="lunch">
                         <div class="menu-card__content">
                             <div class="menu-card__header">
@@ -372,7 +357,6 @@
                     </div>
                 </div>
 
-                <!-- Специальное предложение -->
                 <div class="special-offer">
                     <h3>
                         <i class="fas fa-gift me-2"></i>Семейный обед
@@ -384,16 +368,8 @@
                 </div>
             </div>
 
-            <!-- Отдельные секции категорий (изначально скрыты) -->
-            <div class="menu-section" id="starters">
-                <!-- Контент закусок -->
-            </div>
-            
-            <div class="menu-section" id="soups">
-                <!-- Контент супов -->
-            </div>
-            
-            <!-- и так далее для остальных категорий -->
+            <div class="menu-section" id="starters"></div>
+            <div class="menu-section" id="soups"></div>
         </div>
     </section>
 
@@ -406,13 +382,11 @@
                     </a>
                     <p class="mt-2 mb-0 text-white opacity-75">Кафе чувашской кухни</p>
                 </div>
-                
                 <div class="col-md-4 text-center mb-3 mb-md-0">
                     <p class="text-white opacity-75 mb-0">
                         <i class="fas fa-map-marker-alt me-2"></i>г. Чебоксары, ул. Чувашская, 15
                     </p>
                 </div>
-                
                 <div class="col-md-4 text-md-end">
                     <div class="footer-contacts">
                         <p class="mb-1">
@@ -424,9 +398,7 @@
                     </div>
                 </div>
             </div>
-            
             <hr class="my-4 opacity-25">
-            
             <div class="row">
                 <div class="col-12 text-center">
                     <p class="footer-text mb-0">
@@ -441,7 +413,6 @@
         </div>
     </footer>
 
-    <!-- JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/burger-menu.js"></script>
     <script src="js/menu.js"></script>

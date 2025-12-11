@@ -1,10 +1,6 @@
-
 document.addEventListener('DOMContentLoaded', function() {
-    console.log('Сайт загружен и готов к работе');
-    
     initSmoothScroll();
     initScrollAnimations();
-    
     checkBurgerMenu();
 });
 
@@ -20,7 +16,6 @@ function initSmoothScroll() {
             if (targetElement) {
                 e.preventDefault();
                 
-                // Закрываем бургер-меню если оно открыто
                 closeBurgerMenu();
                 
                 const headerHeight = document.querySelector('.header')?.offsetHeight || 0;
@@ -84,5 +79,3 @@ function checkBurgerMenu() {
 window.addEventListener('resize', function() {
     checkBurgerMenu();
 });
-
-console.log('script.js загружен - только базовая функциональность');

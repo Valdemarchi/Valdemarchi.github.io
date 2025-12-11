@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     const categoryButtons = document.querySelectorAll('.menu-category-btn');
     const menuCards = document.querySelectorAll('.menu-card');
@@ -21,6 +20,4 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
     });
-    
-    console.log('Меню с категориями инициализировано');
 });

@@ -1,6 +1,3 @@
-/* responsive.css - Адаптивные стили с бургер-меню */
-
-/* === МОБИЛЬНЫЕ УСТРОЙСТВА (до 767px) === */
 @media (max-width: 767px) {
     .hero {
         padding: 100px 0;
@@ -18,9 +15,6 @@
         font-size: 28px;
     }
     
-    /* === БУРГЕР-МЕНЮ ДЛЯ МОБИЛЬНЫХ === */
-    
-    /* Скрываем обычное меню на мобильных */
     .nav {
         position: fixed;
         top: 0;
@@ -34,7 +28,7 @@
         transition: all 0.4s ease;
         z-index: 999;
         overflow-y: auto;
-        display: block !important; /* Важно! */
+        display: block !important;
     }
     
     .nav.active {
@@ -71,7 +65,6 @@
         padding-left: 10px;
     }
     
-    /* === БУРГЕР-ИКОНКА (показываем на мобильных) === */
     .burger {
         display: flex;
         flex-direction: column;
@@ -92,7 +85,6 @@
         transition: all 0.3s ease;
     }
     
-    /* Анимация бургера в крестик */
     .burger.active span:nth-child(1) {
         transform: rotate(45deg) translate(6px, 6px);
     }
@@ -105,7 +97,6 @@
         transform: rotate(-45deg) translate(6px, -6px);
     }
     
-    /* Затемнение фона при открытом меню */
     .burger-overlay {
         display: none;
         position: fixed;
@@ -121,12 +112,10 @@
         display: block;
     }
     
-    /* Отключаем прокрутку при открытом меню */
     body.menu-open {
         overflow: hidden;
     }
     
-    /* === ОСТАЛЬНЫЕ МОБИЛЬНЫЕ СТИЛИ === */
     .dishes-grid,
     .menu-grid {
         grid-template-columns: 1fr;
@@ -151,7 +140,6 @@
     }
 }
 
-/* === ПЛАНШЕТЫ (768px - 991px) === */
 @media (min-width: 768px) and (max-width: 991px) {
     .hero {
         padding: 120px 0;
@@ -170,12 +158,10 @@
         grid-template-columns: repeat(2, 1fr);
     }
     
-    /* Бургер скрыт на планшетах и десктопах */
     .burger {
         display: none !important;
     }
     
-    /* На планшетах показываем обычное меню */
     .nav {
         display: block !important;
     }
@@ -190,25 +176,20 @@
     }
 }
 
-/* === ДЕСКТОП (992px и больше) === */
 @media (min-width: 992px) {
     .nav__list {
         gap: 32px;
     }
     
-    /* Бургер скрыт на десктопах */
     .burger {
         display: none !important;
     }
     
-    /* Показываем обычное меню */
     .nav {
         display: block !important;
     }
 }
 
-/* === БАЗОВЫЕ СТИЛИ (для всех устройств) === */
-/* Убедимся, что навигация видна по умолчанию */
 .nav {
     display: block;
 }
@@ -217,7 +198,6 @@
     display: none;
 }
 
-/* Анимации */
 .fade-in-up {
     animation: fadeInUp 0.8s ease forwards;
 }
@@ -233,7 +213,6 @@
     }
 }
 
-/* Плавное появление меню */
 @keyframes slideIn {
     from {
         transform: translateX(-100%);
@@ -248,8 +227,6 @@
 .nav.active {
     animation: slideIn 0.4s ease forwards;
 }
-
-/* Адаптивность для новых элементов */
 
 @media (max-width: 767px) {
     .hero__title i {
@@ -280,7 +257,15 @@
     }
 }
 
-/* Стили для иконок в заголовках секций */
 .section-title i {
     vertical-align: middle;
+    color: var(--primary-color) !important;
+}
+
+@media (max-width: 767px) {
+    .btn-primary,
+    .btn-outline-primary {
+        font-size: 14px;
+        padding: 8px 16px;
+    }
 }

@@ -1,12 +1,8 @@
-/* gallery.css - Стили для страницы галереи */
-
-/* Специальный hero для галереи */
 .gallery-hero {
     background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url("../images/gallery/hero.jpg") center/cover no-repeat;
     padding: 120px 0;
 }
 
-/* Категории галереи */
 .gallery-categories {
     display: flex;
     justify-content: center;
@@ -38,7 +34,6 @@
     border-color: var(--primary-color);
 }
 
-/* Сетка галереи */
 .gallery-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
@@ -103,13 +98,12 @@
     opacity: 0.9;
 }
 
-/* Информационный блок */
 .gallery-info {
     background: var(--light-color);
     border: 2px solid var(--primary-color);
+    border-radius: 12px;
 }
 
-/* Адаптивность */
 @media (max-width: 767px) {
     .gallery-hero {
         padding: 80px 0;
@@ -140,7 +134,6 @@
     }
 }
 
-/* Модальное окно для просмотра фото */
 .gallery-modal {
     display: none;
     position: fixed;
@@ -183,4 +176,46 @@
     text-align: center;
     color: white;
     padding: 10px;
+}
+
+.gallery-category-btn:hover {
+    border-color: var(--primary-color);
+    color: var(--primary-color);
+}
+
+.gallery-category-btn.active {
+    background: var(--primary-color);
+    color: var(--white);
+    border-color: var(--primary-color);
+}
+
+.gallery-overlay {
+    background: linear-gradient(to top, rgba(124, 31, 31, 0.9), transparent) !important;
+}
+
+.gallery-info {
+    border: 2px solid var(--primary-color) !important;
+}
+
+.gallery-info .btn-primary {
+    background: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.gallery-info .btn-outline-primary {
+    color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+}
+
+.gallery-info .btn-outline-primary:hover {
+    background: var(--primary-color) !important;
+    color: var(--white) !important;
+}
+
+.gallery-category-btn i {
+    color: inherit !important;
+}
+
+.gallery-info h3 i {
+    color: var(--primary-color) !important;
 }
