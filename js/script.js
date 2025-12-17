@@ -79,3 +79,25 @@ function checkBurgerMenu() {
 window.addEventListener('resize', function() {
     checkBurgerMenu();
 });
+
+// Автопрокрутка карусели отзывов
+document.addEventListener('DOMContentLoaded', function() {
+    const reviewsCarousel = document.getElementById('reviewsCarousel');
+    if (reviewsCarousel) {
+        // Инициализация карусели с автопрокруткой
+        const carousel = new bootstrap.Carousel(reviewsCarousel, {
+            interval: 5000, // 5 секунд между слайдами
+            wrap: true,
+            pause: 'hover', // останавливается при наведении
+            touch: true // поддерживает свайп на мобильных
+        });
+        
+        // Добавляем плавную анимацию
+        reviewsCarousel.addEventListener('slide.bs.carousel', function(event) {
+            const activeSlide = event.from;
+            const nextSlide = event.to;
+            
+            // Можно добавить дополнительные анимации
+        });
+    }
+});

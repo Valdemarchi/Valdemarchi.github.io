@@ -126,69 +126,185 @@
         </div>
     </section>
 
-    <section class="section bg-light">
+    <section class="section bg-light" id="reviews">
         <div class="container">
             <h2 class="section-title">
                 <i class="fas fa-comment-alt me-3"></i>Отзывы наших гостей
             </h2>
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <div class="review-card h-100">
-                        <div class="review-header mb-3">
-                            <div class="stars text-warning">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
+            
+            <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
+                <!-- Индикаторы -->
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Отзыв 1"></button>
+                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" aria-label="Отзыв 2"></button>
+                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" aria-label="Отзыв 3"></button>
+                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="3" aria-label="Отзыв 4"></button>
+                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="4" aria-label="Отзыв 5"></button>
+                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="5" aria-label="Отзыв 6"></button>
+                </div>
+                
+                <!-- Слайды -->
+                <div class="carousel-inner">
+                    <!-- Слайд 1 -->
+                    <div class="carousel-item active">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+                                <div class="review-card h-100">
+                                    <div class="review-header mb-3">
+                                        <div class="stars text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
+                                    </div>
+                                    <p class="review-text text-center">"Невероятно вкусная чувашская кухня! Хуплу просто восхитителен. Атмосфера уютная, обслуживание на высоте!"</p>
+                                    <div class="review-author text-center">
+                                        <i class="fas fa-user-circle me-2"></i>
+                                        <strong>Мария Иванова</strong>
+                                    </div>
+                                </div>
                             </div>
-                            <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
                         </div>
-                        <p class="review-text">"Невероятно вкусная чувашская кухня! Хуплу просто восхитителен. Атмосфера уютная, обслуживание на высоте!"</p>
-                        <div class="review-author">
-                            <i class="fas fa-user-circle me-2"></i>
-                            <strong>Мария Иванова</strong>
+                    </div>
+                    
+                    <!-- Слайд 2 -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+                                <div class="review-card h-100">
+                                    <div class="review-header mb-3">
+                                        <div class="stars text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
+                                    </div>
+                                    <p class="review-text text-center">"Привезли друзей из другого города познакомить с чувашской культурой. Остались в полном восторге от блюд и гостеприимства!"</p>
+                                    <div class="review-author text-center">
+                                        <i class="fas fa-user-circle me-2"></i>
+                                        <strong>Ольга Семенова</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Слайд 3 -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+                                <div class="review-card h-100">
+                                    <div class="review-header mb-3">
+                                        <div class="stars text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
+                                    </div>
+                                    <p class="review-text text-center">"Шартан и яшка — это нечто! Вкус детства. Обязательно вернёмся с семьей. Спасибо за сохранение традиций!"</p>
+                                    <div class="review-author text-center">
+                                        <i class="fas fa-user-circle me-2"></i>
+                                        <strong>Алексей Петров</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Слайд 4 -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+                                <div class="review-card h-100">
+                                    <div class="review-header mb-3">
+                                        <div class="stars text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
+                                    </div>
+                                    <p class="review-text text-center">"Впервые попробовала чувашскую кухню — в полном восторге! Пахлава и чак-чак — это просто волшебство. Обязательно научусь готовить эти блюда дома!"</p>
+                                    <div class="review-author text-center">
+                                        <i class="fas fa-user-circle me-2"></i>
+                                        <strong>Екатерина Волкова</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Слайд 5 -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+                                <div class="review-card h-100">
+                                    <div class="review-header mb-3">
+                                        <div class="stars text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
+                                    </div>
+                                    <p class="review-text text-center">"Отмечали здесь день рождения. Персонал очень внимательный, помогли с организацией. Блюда подавали вовремя, все горячее и свежее. Особенно понравились мясные блюда!"</p>
+                                    <div class="review-author text-center">
+                                        <i class="fas fa-user-circle me-2"></i>
+                                        <strong>Дмитрий Козлов</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Слайд 6 -->
+                    <div class="carousel-item">
+                        <div class="row justify-content-center">
+                            <div class="col-lg-8 col-xl-6">
+                                <div class="review-card h-100">
+                                    <div class="review-header mb-3">
+                                        <div class="stars text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
+                                    </div>
+                                    <p class="review-text text-center">"Как человек, выросший в Чувашии, могу сказать — здесь готовят так же вкусно, как моя бабушка! Атмосфера напомнила детство. Спасибо за такие тёплые воспоминания!"</p>
+                                    <div class="review-author text-center">
+                                        <i class="fas fa-user-circle me-2"></i>
+                                        <strong>Сергей Николаев</strong>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="review-card h-100">
-                        <div class="review-header mb-3">
-                            <div class="stars text-warning">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star-half-alt"></i>
-                            </div>
-                            <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
-                        </div>
-                        <p class="review-text">"Привезли друзей из другого города познакомить с чувашской культурой. Остались в полном восторге от блюд и гостеприимства!"</p>
-                        <div class="review-author">
-                            <i class="fas fa-user-circle me-2"></i>
-                            <strong>Ольга Семенова</strong>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="review-card h-100">
-                        <div class="review-header mb-3">
-                            <div class="stars text-warning">
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                                <i class="fas fa-star"></i>
-                            </div>
-                            <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
-                        </div>
-                        <p class="review-text">"Шартан и яшка — это нечто! Вкус детства. Обязательно вернёмся с семьей. Спасибо за сохранение традиций!"</p>
-                        <div class="review-author">
-                            <i class="fas fa-user-circle me-2"></i>
-                            <strong>Алексей Петров</strong>
-                        </div>
-                    </div>
-                </div>
+                
+                <!-- Кнопки управления -->
+                <button class="carousel-control-prev" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Предыдущий</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#reviewsCarousel" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Следующий</span>
+                </button>
             </div>
         </div>
     </section>
@@ -319,5 +435,19 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/burger-menu.js"></script>
     <script src="js/script.js"></script>
+    <script>
+        // Автопрокрутка карусели отзывов
+        document.addEventListener('DOMContentLoaded', function() {
+            const reviewsCarousel = document.getElementById('reviewsCarousel');
+            if (reviewsCarousel) {
+                const carousel = new bootstrap.Carousel(reviewsCarousel, {
+                    interval: 5000, // 5 секунд между слайдами
+                    wrap: true,
+                    pause: 'hover', // останавливается при наведении
+                    touch: true // поддерживает свайп на мобильных
+                });
+            }
+        });
+    </script>
 </body>
 </html>
