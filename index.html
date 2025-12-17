@@ -10,6 +10,158 @@
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/responsive.css">
+    <style>
+        /* Дополнительные стили для карусели с 3 отзывами */
+        #reviewsCarousel .carousel-inner {
+            padding: 20px 0 40px;
+        }
+        
+        #reviewsCarousel .carousel-item {
+            transition: transform 0.8s ease-in-out;
+        }
+        
+        #reviewsCarousel .carousel-item .row {
+            min-height: 320px;
+        }
+        
+        #reviewsCarousel .review-card {
+            height: 100%;
+            margin: 0;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+        
+        #reviewsCarousel .review-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        #reviewsCarousel .review-text {
+            font-size: 1rem;
+            line-height: 1.6;
+            text-align: left;
+            margin-bottom: 20px;
+            height: 120px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        #reviewsCarousel .review-text::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 20px;
+            background: linear-gradient(to bottom, transparent, white);
+        }
+        
+        #reviewsCarousel .review-header {
+            margin-bottom: 15px;
+            min-height: 50px;
+        }
+        
+        #reviewsCarousel .review-author {
+            text-align: left;
+            margin-top: 15px;
+        }
+        
+        /* Индикаторы */
+        #reviewsCarousel .carousel-indicators {
+            bottom: 0;
+            margin-bottom: 0;
+        }
+        
+        #reviewsCarousel .carousel-indicators button {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ccc;
+            margin: 0 6px;
+            border: none;
+            transition: all 0.3s ease;
+        }
+        
+        #reviewsCarousel .carousel-indicators button.active {
+            background-color: var(--primary-color, #7C1F1F);
+            transform: scale(1.3);
+        }
+        
+        /* Кнопки управления */
+        #reviewsCarousel .carousel-control-prev,
+        #reviewsCarousel .carousel-control-next {
+            width: 45px;
+            height: 45px;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: white;
+            border-radius: 50%;
+            opacity: 1;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            transition: all 0.3s ease;
+        }
+        
+        #reviewsCarousel .carousel-control-prev {
+            left: -25px;
+        }
+        
+        #reviewsCarousel .carousel-control-next {
+            right: -25px;
+        }
+        
+        #reviewsCarousel .carousel-control-prev:hover,
+        #reviewsCarousel .carousel-control-next:hover {
+            background-color: var(--primary-color, #7C1F1F);
+        }
+        
+        #reviewsCarousel .carousel-control-prev-icon,
+        #reviewsCarousel .carousel-control-next-icon {
+            filter: invert(15%) sepia(70%) saturate(4000%) hue-rotate(350deg) brightness(90%) contrast(90%);
+            width: 20px;
+            height: 20px;
+        }
+        
+        #reviewsCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+        #reviewsCarousel .carousel-control-next:hover .carousel-control-next-icon {
+            filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 991px) {
+            #reviewsCarousel .carousel-control-prev,
+            #reviewsCarousel .carousel-control-next {
+                display: none;
+            }
+            
+            #reviewsCarousel .review-card {
+                padding: 20px;
+            }
+            
+            #reviewsCarousel .review-text {
+                height: 100px;
+                font-size: 0.95rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            #reviewsCarousel .carousel-item .col-md-4 {
+                margin-bottom: 20px;
+            }
+            
+            #reviewsCarousel .review-card {
+                max-width: 400px;
+                margin: 0 auto;
+            }
+            
+            #reviewsCarousel .review-text {
+                height: auto;
+            }
+            
+            #reviewsCarousel .review-text::after {
+                display: none;
+            }
+        }
+    </style>
 </head>
 <body>
     <header class="header">
@@ -135,20 +287,17 @@
             <div id="reviewsCarousel" class="carousel slide" data-bs-ride="carousel">
                 <!-- Индикаторы -->
                 <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Отзыв 1"></button>
-                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" aria-label="Отзыв 2"></button>
-                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" aria-label="Отзыв 3"></button>
-                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="3" aria-label="Отзыв 4"></button>
-                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="4" aria-label="Отзыв 5"></button>
-                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="5" aria-label="Отзыв 6"></button>
+                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Слайд 1"></button>
+                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="1" aria-label="Слайд 2"></button>
+                    <button type="button" data-bs-target="#reviewsCarousel" data-bs-slide-to="2" aria-label="Слайд 3"></button>
                 </div>
                 
                 <!-- Слайды -->
                 <div class="carousel-inner">
-                    <!-- Слайд 1 -->
+                    <!-- Слайд 1 - первые 3 отзыва -->
                     <div class="carousel-item active">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
+                        <div class="row g-4">
+                            <div class="col-md-4">
                                 <div class="review-card h-100">
                                     <div class="review-header mb-3">
                                         <div class="stars text-warning">
@@ -160,20 +309,14 @@
                                         </div>
                                         <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
                                     </div>
-                                    <p class="review-text text-center">"Невероятно вкусная чувашская кухня! Хуплу просто восхитителен. Атмосфера уютная, обслуживание на высоте!"</p>
-                                    <div class="review-author text-center">
+                                    <p class="review-text">"Невероятно вкусная чувашская кухня! Хуплу просто восхитителен. Атмосфера уютная, обслуживание на высоте!"</p>
+                                    <div class="review-author">
                                         <i class="fas fa-user-circle me-2"></i>
                                         <strong>Мария Иванова</strong>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Слайд 2 -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
+                            <div class="col-md-4">
                                 <div class="review-card h-100">
                                     <div class="review-header mb-3">
                                         <div class="stars text-warning">
@@ -185,20 +328,14 @@
                                         </div>
                                         <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
                                     </div>
-                                    <p class="review-text text-center">"Привезли друзей из другого города познакомить с чувашской культурой. Остались в полном восторге от блюд и гостеприимства!"</p>
-                                    <div class="review-author text-center">
+                                    <p class="review-text">"Привезли друзей из другого города познакомить с чувашской культурой. Остались в полном восторге от блюд и гостеприимства!"</p>
+                                    <div class="review-author">
                                         <i class="fas fa-user-circle me-2"></i>
                                         <strong>Ольга Семенова</strong>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Слайд 3 -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
+                            <div class="col-md-4">
                                 <div class="review-card h-100">
                                     <div class="review-header mb-3">
                                         <div class="stars text-warning">
@@ -210,8 +347,8 @@
                                         </div>
                                         <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
                                     </div>
-                                    <p class="review-text text-center">"Шартан и яшка — это нечто! Вкус детства. Обязательно вернёмся с семьей. Спасибо за сохранение традиций!"</p>
-                                    <div class="review-author text-center">
+                                    <p class="review-text">"Шартан и яшка — это нечто! Вкус детства. Обязательно вернёмся с семьей. Спасибо за сохранение традиций!"</p>
+                                    <div class="review-author">
                                         <i class="fas fa-user-circle me-2"></i>
                                         <strong>Алексей Петров</strong>
                                     </div>
@@ -220,10 +357,10 @@
                         </div>
                     </div>
                     
-                    <!-- Слайд 4 -->
+                    <!-- Слайд 2 - вторые 3 отзыва -->
                     <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
+                        <div class="row g-4">
+                            <div class="col-md-4">
                                 <div class="review-card h-100">
                                     <div class="review-header mb-3">
                                         <div class="stars text-warning">
@@ -235,20 +372,14 @@
                                         </div>
                                         <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
                                     </div>
-                                    <p class="review-text text-center">"Впервые попробовала чувашскую кухню — в полном восторге! Пахлава и чак-чак — это просто волшебство. Обязательно научусь готовить эти блюда дома!"</p>
-                                    <div class="review-author text-center">
+                                    <p class="review-text">"Впервые попробовала чувашскую кухню — в полном восторге! Пахлава и чак-чак — это просто волшебство. Обязательно научусь готовить эти блюда дома!"</p>
+                                    <div class="review-author">
                                         <i class="fas fa-user-circle me-2"></i>
                                         <strong>Екатерина Волкова</strong>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Слайд 5 -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
+                            <div class="col-md-4">
                                 <div class="review-card h-100">
                                     <div class="review-header mb-3">
                                         <div class="stars text-warning">
@@ -260,20 +391,14 @@
                                         </div>
                                         <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
                                     </div>
-                                    <p class="review-text text-center">"Отмечали здесь день рождения. Персонал очень внимательный, помогли с организацией. Блюда подавали вовремя, все горячее и свежее. Особенно понравились мясные блюда!"</p>
-                                    <div class="review-author text-center">
+                                    <p class="review-text">"Отмечали здесь день рождения. Персонал очень внимательный, помогли с организацией. Блюда подавали вовремя, все горячее и свежее. Особенно понравились мясные блюда!"</p>
+                                    <div class="review-author">
                                         <i class="fas fa-user-circle me-2"></i>
                                         <strong>Дмитрий Козлов</strong>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Слайд 6 -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-center">
-                            <div class="col-lg-8 col-xl-6">
+                            <div class="col-md-4">
                                 <div class="review-card h-100">
                                     <div class="review-header mb-3">
                                         <div class="stars text-warning">
@@ -285,10 +410,73 @@
                                         </div>
                                         <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
                                     </div>
-                                    <p class="review-text text-center">"Как человек, выросший в Чувашии, могу сказать — здесь готовят так же вкусно, как моя бабушка! Атмосфера напомнила детство. Спасибо за такие тёплые воспоминания!"</p>
-                                    <div class="review-author text-center">
+                                    <p class="review-text">"Как человек, выросший в Чувашии, могу сказать — здесь готовят так же вкусно, как моя бабушка! Атмосфера напомнила детство. Спасибо за такие тёплые воспоминания!"</p>
+                                    <div class="review-author">
                                         <i class="fas fa-user-circle me-2"></i>
                                         <strong>Сергей Николаев</strong>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Слайд 3 - третьи 3 отзыва -->
+                    <div class="carousel-item">
+                        <div class="row g-4">
+                            <div class="col-md-4">
+                                <div class="review-card h-100">
+                                    <div class="review-header mb-3">
+                                        <div class="stars text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
+                                    </div>
+                                    <p class="review-text">"Приехали с семьёй из Москвы специально, чтобы познакомиться с чувашской кухней. Ни капли не пожалели! Дети в восторге от выпечки, а мы с мужем оценили мясные блюда."</p>
+                                    <div class="review-author">
+                                        <i class="fas fa-user-circle me-2"></i>
+                                        <strong>Анна и Михаил Соколовы</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="review-card h-100">
+                                    <div class="review-header mb-3">
+                                        <div class="stars text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                        </div>
+                                        <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
+                                    </div>
+                                    <p class="review-text">"Были здесь на деловой встрече. Уютная атмосфера, негромкая народная музыка создаёт приятный фон. Кухня впечатлила даже самых искушённых коллег."</p>
+                                    <div class="review-author">
+                                        <i class="fas fa-user-circle me-2"></i>
+                                        <strong>Павел Орлов</strong>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="review-card h-100">
+                                    <div class="review-header mb-3">
+                                        <div class="stars text-warning">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                        </div>
+                                        <i class="fas fa-quote-right fa-2x text-primary opacity-25 mt-2"></i>
+                                    </div>
+                                    <p class="review-text">"Я вегетарианка и думала, что мне будет нечего есть. Но оказалось, здесь есть потрясающие овощные блюда и выпечка! Пирожки с картошкой и грибами — просто объедение."</p>
+                                    <div class="review-author">
+                                        <i class="fas fa-user-circle me-2"></i>
+                                        <strong>Ирина Морозова</strong>
                                     </div>
                                 </div>
                             </div>
@@ -435,19 +623,5 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/burger-menu.js"></script>
     <script src="js/script.js"></script>
-    <script>
-        // Автопрокрутка карусели отзывов
-        document.addEventListener('DOMContentLoaded', function() {
-            const reviewsCarousel = document.getElementById('reviewsCarousel');
-            if (reviewsCarousel) {
-                const carousel = new bootstrap.Carousel(reviewsCarousel, {
-                    interval: 5000, // 5 секунд между слайдами
-                    wrap: true,
-                    pause: 'hover', // останавливается при наведении
-                    touch: true // поддерживает свайп на мобильных
-                });
-            }
-        });
-    </script>
 </body>
 </html>
