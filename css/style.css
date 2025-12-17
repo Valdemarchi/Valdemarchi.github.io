@@ -273,32 +273,206 @@ a:hover { opacity: 0.8; }
     gap: 28px;
 }
 
-/* ===== REVIEWS ===== */
-.review-card { 
-    padding: 40px; 
-    max-width: 600px; 
-    margin: 0 auto 30px; 
+/* ===== REVIEWS CAROUSEL ===== */
+#reviewsCarousel {
+    padding: 0 50px;
+    position: relative;
+    margin-bottom: 40px;
+}
+
+#reviewsCarousel .carousel-inner {
+    padding: 30px 0 50px;
+}
+
+/* Индикаторы */
+#reviewsCarousel .carousel-indicators {
+    position: static;
+    margin-top: 40px;
+    margin-bottom: 0;
+}
+
+#reviewsCarousel .carousel-indicators button {
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background-color: #d9d9d9;
+    border: none;
+    margin: 0 8px;
+    transition: all 0.3s ease;
+}
+
+#reviewsCarousel .carousel-indicators button.active {
+    background-color: var(--primary-color);
+    transform: scale(1.3);
+    box-shadow: 0 0 0 3px rgba(124, 31, 31, 0.15);
+}
+
+/* Кнопки управления */
+#reviewsCarousel .carousel-control-prev,
+#reviewsCarousel .carousel-control-next {
+    width: 55px;
+    height: 55px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: var(--white);
+    border-radius: 50%;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
+    opacity: 1;
+    transition: all 0.3s ease;
+    border: 2px solid rgba(124, 31, 31, 0.1);
+}
+
+#reviewsCarousel .carousel-control-prev {
+    left: -30px;
+}
+
+#reviewsCarousel .carousel-control-next {
+    right: -30px;
+}
+
+#reviewsCarousel .carousel-control-prev:hover,
+#reviewsCarousel .carousel-control-next:hover {
+    background-color: var(--primary-color);
+    box-shadow: 0 6px 20px rgba(124, 31, 31, 0.25);
+    border-color: var(--primary-color);
+}
+
+#reviewsCarousel .carousel-control-prev-icon,
+#reviewsCarousel .carousel-control-next-icon {
+    background-size: 26px;
+    width: 26px;
+    height: 26px;
+    filter: invert(15%) sepia(70%) saturate(4000%) hue-rotate(350deg) brightness(90%) contrast(90%);
+    transition: all 0.3s ease;
+}
+
+#reviewsCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
+#reviewsCarousel .carousel-control-next:hover .carousel-control-next-icon {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
+}
+
+/* Стили для карточек отзывов */
+#reviewsCarousel .review-card {
+    height: 100%;
+    margin: 0;
+    padding: 35px 30px;
     border: 1px solid rgba(124, 31, 31, 0.1);
+    background: var(--white);
+    border-radius: 18px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    min-height: 380px;
 }
 
-.review-text {
-    font-size: 18px;
-    font-style: italic;
-    line-height: 1.8;
-    margin-bottom: 20px;
+#reviewsCarousel .review-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
 }
 
-.review-header {
+#reviewsCarousel .review-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 8px;
+    height: 100%;
+    background: linear-gradient(to bottom, var(--primary-color), var(--accent-color));
+    border-radius: 18px 0 0 18px;
+}
+
+#reviewsCarousel .review-header {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    min-height: 55px;
 }
 
-.stars {
+#reviewsCarousel .stars {
     font-size: 18px;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     color: #FFC107 !important;
+}
+
+#reviewsCarousel .fa-quote-right {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    opacity: 0.15;
+    transition: opacity 0.3s ease;
+}
+
+#reviewsCarousel .review-card:hover .fa-quote-right {
+    opacity: 0.25;
+}
+
+/* Текст отзыва */
+#reviewsCarousel .review-text {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-color);
+    text-align: left;
+    margin-bottom: 25px;
+    font-style: italic;
+    flex-grow: 1;
+    position: relative;
+    padding-right: 5px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    max-height: 170px;
+}
+
+#reviewsCarousel .review-text::before {
+    content: '"';
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    opacity: 0.15;
+    position: absolute;
+    font-family: Georgia, serif;
+    top: -20px;
+    left: -10px;
+    line-height: 1;
+}
+
+#reviewsCarousel .review-author {
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+    margin-top: 10px;
+    padding-top: 15px;
+    border-top: 1px solid rgba(124, 31, 31, 0.1);
+}
+
+#reviewsCarousel .review-author i {
+    font-size: 2.2rem;
+    color: var(--primary-color);
+    margin-right: 12px;
+}
+
+#reviewsCarousel .review-author strong {
+    font-weight: 600;
+    font-size: 1.15rem;
+}
+
+/* Стили для строки с отзывами */
+#reviewsCarousel .carousel-item .row {
+    min-height: 420px;
+    align-items: stretch;
+}
+
+#reviewsCarousel .carousel-item .col-md-4 {
+    display: flex;
+}
+
+/* Анимация для слайдов */
+#reviewsCarousel .carousel-item {
+    transition: transform 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 /* ===== CONTACT ===== */
@@ -355,173 +529,32 @@ a:hover { opacity: 0.8; }
     transition: all 0.3s ease;
 }
 
-/* ===== REVIEWS CAROUSEL ===== */
-#reviewsCarousel {
-    padding: 0 50px;
-    position: relative;
-    margin-bottom: 20px;
+/* ===== ANIMATIONS ===== */
+.fa-heart { animation: heartbeat 1.5s ease-in-out infinite; }
+
+@keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.1); }
 }
 
-#reviewsCarousel .carousel-inner {
-    padding: 30px 0;
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 1199px) {
+    #reviewsCarousel .review-card {
+        padding: 30px 25px;
+        min-height: 360px;
+    }
+    
+    #reviewsCarousel .review-text {
+        font-size: 1.05rem;
+        -webkit-line-clamp: 5;
+        max-height: 150px;
+    }
+    
+    #reviewsCarousel .carousel-item .row {
+        min-height: 400px;
+    }
 }
 
-/* Индикаторы */
-#reviewsCarousel .carousel-indicators {
-    position: static;
-    margin-top: 30px;
-    margin-bottom: 0;
-}
-
-#reviewsCarousel .carousel-indicators button {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: #d9d9d9;
-    border: none;
-    margin: 0 5px;
-    transition: all 0.3s ease;
-}
-
-#reviewsCarousel .carousel-indicators button.active {
-    background-color: var(--primary-color);
-    transform: scale(1.2);
-}
-
-/* Кнопки управления */
-#reviewsCarousel .carousel-control-prev,
-#reviewsCarousel .carousel-control-next {
-    width: 50px;
-    height: 50px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: var(--white);
-    border-radius: 50%;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    opacity: 1;
-    transition: all 0.3s ease;
-}
-
-#reviewsCarousel .carousel-control-prev {
-    left: -25px;
-}
-
-#reviewsCarousel .carousel-control-next {
-    right: -25px;
-}
-
-#reviewsCarousel .carousel-control-prev:hover,
-#reviewsCarousel .carousel-control-next:hover {
-    background-color: var(--primary-color);
-    box-shadow: 0 6px 18px rgba(124, 31, 31, 0.2);
-}
-
-#reviewsCarousel .carousel-control-prev-icon,
-#reviewsCarousel .carousel-control-next-icon {
-    background-size: 24px;
-    width: 24px;
-    height: 24px;
-    filter: invert(15%) sepia(70%) saturate(4000%) hue-rotate(350deg) brightness(90%) contrast(90%);
-}
-
-#reviewsCarousel .carousel-control-prev:hover .carousel-control-prev-icon,
-#reviewsCarousel .carousel-control-next:hover .carousel-control-next-icon {
-    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(93deg) brightness(103%) contrast(103%);
-}
-
-/* Стили для отзывов в карусели */
-#reviewsCarousel .review-card {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 40px 50px;
-    border: none;
-    background: var(--white);
-    border-radius: 16px;
-    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
-    position: relative;
-    overflow: hidden;
-}
-
-#reviewsCarousel .review-card::before {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 6px;
-    height: 100%;
-    background: var(--primary-color);
-}
-
-#reviewsCarousel .review-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 25px;
-}
-
-#reviewsCarousel .review-text {
-    font-size: 1.15rem;
-    line-height: 1.7;
-    color: var(--text-color);
-    text-align: center;
-    margin-bottom: 25px;
-    font-style: italic;
-    position: relative;
-    padding: 0 10px;
-}
-
-#reviewsCarousel .review-text::before,
-#reviewsCarousel .review-text::after {
-    content: '"';
-    font-size: 2.5rem;
-    color: var(--primary-color);
-    opacity: 0.2;
-    position: absolute;
-    font-family: Georgia, serif;
-}
-
-#reviewsCarousel .review-text::before {
-    top: -15px;
-    left: 0;
-}
-
-#reviewsCarousel .review-text::after {
-    bottom: -25px;
-    right: 0;
-}
-
-#reviewsCarousel .review-author {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 1.05rem;
-    color: var(--text-dark);
-}
-
-#reviewsCarousel .review-author i {
-    font-size: 1.8rem;
-    color: var(--primary-color);
-}
-
-/* Анимация для слайдов */
-#reviewsCarousel .carousel-item {
-    transition: transform 0.6s ease-in-out;
-}
-
-/* ===== Множественные отзывы на слайде (опционально) ===== */
-/* Если хочешь показывать 3 отзыва на десктопе и 1 на мобильных */
-#reviewsCarousel.multiple .carousel-item .row {
-    display: flex;
-    flex-wrap: nowrap;
-    overflow: hidden;
-}
-
-#reviewsCarousel.multiple .carousel-item .col-md-4 {
-    flex: 0 0 33.333%;
-    max-width: 33.333%;
-}
-
-/* ===== RESPONSIVE DESIGN FOR CAROUSEL ===== */
 @media (max-width: 991px) {
     #reviewsCarousel {
         padding: 0 40px;
@@ -536,94 +569,35 @@ a:hover { opacity: 0.8; }
     }
     
     #reviewsCarousel .review-card {
-        padding: 30px 35px;
-    }
-    
-    #reviewsCarousel .review-text {
-        font-size: 1.1rem;
-    }
-}
-
-@media (max-width: 767px) {
-    #reviewsCarousel {
-        padding: 0 30px;
-    }
-    
-    #reviewsCarousel .carousel-control-prev,
-    #reviewsCarousel .carousel-control-next {
-        width: 40px;
-        height: 40px;
-    }
-    
-    #reviewsCarousel .carousel-control-prev {
-        left: -15px;
-    }
-    
-    #reviewsCarousel .carousel-control-next {
-        right: -15px;
-    }
-    
-    #reviewsCarousel .carousel-control-prev-icon,
-    #reviewsCarousel .carousel-control-next-icon {
-        background-size: 20px;
-        width: 20px;
-        height: 20px;
-    }
-    
-    #reviewsCarousel .review-card {
-        padding: 25px;
+        padding: 28px 22px;
+        min-height: 350px;
     }
     
     #reviewsCarousel .review-text {
         font-size: 1rem;
-        padding: 0;
+        -webkit-line-clamp: 4;
+        max-height: 130px;
     }
     
-    #reviewsCarousel .review-text::before,
-    #reviewsCarousel .review-text::after {
+    #reviewsCarousel .review-author {
+        font-size: 1rem;
+    }
+    
+    #reviewsCarousel .review-author i {
         font-size: 2rem;
     }
     
-    #reviewsCarousel .review-text::before {
-        top: -10px;
-        left: -5px;
+    #reviewsCarousel .carousel-item .row {
+        min-height: 380px;
     }
     
-    #reviewsCarousel .review-text::after {
-        bottom: -20px;
-        right: -5px;
-    }
-    
-    #reviewsCarousel .carousel-indicators button {
-        width: 10px;
-        height: 10px;
-    }
+    .hero { padding: 120px 0; }
+    .hero__title { font-size: 44px; }
+    .hero__subtitle { font-size: 19px; }
+    .dishes-grid, .menu-grid { grid-template-columns: repeat(2, 1fr); }
+    .burger { display: none !important; }
 }
 
-@media (max-width: 576px) {
-    #reviewsCarousel {
-        padding: 0 15px;
-    }
-    
-    #reviewsCarousel .carousel-control-prev,
-    #reviewsCarousel .carousel-control-next {
-        display: none;
-    }
-    
-    #reviewsCarousel .review-card {
-        padding: 20px;
-    }
-}
-
-/* ===== ANIMATIONS ===== */
-.fa-heart { animation: heartbeat 1.5s ease-in-out infinite; }
-
-@keyframes heartbeat {
-    0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.1); }
-}
-
-/* ===== RESPONSIVE DESIGN ===== */
 @media (max-width: 767px) {
     .hero {
         padding: 100px 0;
@@ -677,14 +651,124 @@ a:hover { opacity: 0.8; }
     
     .header { padding: 12px 0; }
     .logo { font-size: 28px; }
+    
+    /* Reviews Carousel Mobile */
+    #reviewsCarousel {
+        padding: 0 20px;
+    }
+    
+    #reviewsCarousel .carousel-control-prev,
+    #reviewsCarousel .carousel-control-next {
+        width: 45px;
+        height: 45px;
+        display: flex !important;
+    }
+    
+    #reviewsCarousel .carousel-control-prev {
+        left: -15px;
+    }
+    
+    #reviewsCarousel .carousel-control-next {
+        right: -15px;
+    }
+    
+    #reviewsCarousel .carousel-control-prev-icon,
+    #reviewsCarousel .carousel-control-next-icon {
+        background-size: 22px;
+        width: 22px;
+        height: 22px;
+    }
+    
+    #reviewsCarousel .carousel-item .col-md-4 {
+        margin-bottom: 20px;
+    }
+    
+    #reviewsCarousel .review-card {
+        padding: 25px;
+        min-height: 300px;
+        max-width: 450px;
+        margin: 0 auto;
+    }
+    
+    #reviewsCarousel .review-text {
+        font-size: 1rem;
+        -webkit-line-clamp: 5;
+        max-height: 140px;
+    }
+    
+    #reviewsCarousel .review-text::before {
+        font-size: 3rem;
+        top: -15px;
+    }
+    
+    #reviewsCarousel .review-header {
+        margin-bottom: 20px;
+        min-height: 45px;
+    }
+    
+    #reviewsCarousel .stars {
+        font-size: 16px;
+    }
+    
+    #reviewsCarousel .fa-quote-right {
+        font-size: 1.8rem;
+    }
+    
+    #reviewsCarousel .carousel-indicators button {
+        width: 12px;
+        height: 12px;
+        margin: 0 6px;
+    }
 }
 
-@media (min-width: 768px) and (max-width: 991px) {
-    .hero { padding: 120px 0; }
-    .hero__title { font-size: 44px; }
-    .hero__subtitle { font-size: 19px; }
-    .dishes-grid, .menu-grid { grid-template-columns: repeat(2, 1fr); }
-    .burger { display: none !important; }
+@media (max-width: 576px) {
+    #reviewsCarousel {
+        padding: 0 15px;
+    }
+    
+    #reviewsCarousel .carousel-control-prev,
+    #reviewsCarousel .carousel-control-next {
+        width: 40px;
+        height: 40px;
+    }
+    
+    #reviewsCarousel .carousel-control-prev {
+        left: -10px;
+    }
+    
+    #reviewsCarousel .carousel-control-next {
+        right: -10px;
+    }
+    
+    #reviewsCarousel .review-card {
+        padding: 22px;
+        min-height: 280px;
+    }
+    
+    #reviewsCarousel .review-text {
+        font-size: 0.95rem;
+        -webkit-line-clamp: 4;
+        max-height: 120px;
+        line-height: 1.6;
+    }
+    
+    #reviewsCarousel .review-text::before {
+        font-size: 2.5rem;
+        top: -12px;
+        left: -8px;
+    }
+    
+    #reviewsCarousel .review-author {
+        font-size: 0.95rem;
+    }
+    
+    #reviewsCarousel .review-author i {
+        font-size: 1.8rem;
+    }
+    
+    #reviewsCarousel .carousel-indicators {
+        margin-top: 30px;
+    }
 }
 
 @media (min-width: 992px) {
