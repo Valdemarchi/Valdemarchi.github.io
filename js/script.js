@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initScrollAnimations();
-    checkBurgerMenu();
 });
 
 function initSmoothScroll() {
@@ -59,11 +58,7 @@ function initScrollAnimations() {
     });
     
     elements.forEach(el => observer.observe(el));
-}
-
-window.addEventListener('resize', function() {
-    checkBurgerMenu();
-});
+} 
 
 // Автопрокрутка карусели отзывов
 document.addEventListener('DOMContentLoaded', function() {
