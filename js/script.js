@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     initSmoothScroll();
     initScrollAnimations();
+    // УДАЛЕНО: checkBurgerMenu() - теперь управляется в burger-menu.js
 });
 
 function initSmoothScroll() {
@@ -58,7 +59,9 @@ function initScrollAnimations() {
     });
     
     elements.forEach(el => observer.observe(el));
-} 
+}
+
+// УДАЛЕНА ФУНКЦИЯ checkBurgerMenu() - ВСЕ УПРАВЛЕНИЕ В burger-menu.js
 
 // Автопрокрутка карусели отзывов
 document.addEventListener('DOMContentLoaded', function() {
