@@ -269,3 +269,23 @@
         padding: 8px 16px;
     }
 }
+/* В конец файла responsive.css добавьте: */
+@media (max-width: 767px) {
+    .burger {
+        display: flex !important;
+    }
+    
+    .nav {
+        display: none !important;
+    }
+}
+
+@media (min-width: 768px) {
+    .burger {
+        display: none !important;
+    }
+    
+    .nav {
+        display: block !important;
+    }
+}
