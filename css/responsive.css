@@ -275,9 +275,9 @@
         display: flex !important;
     }
     
-    .nav {
+    /* .nav {
         display: none !important;
-    }
+    } */
 }
 
 @media (min-width: 768px) {
