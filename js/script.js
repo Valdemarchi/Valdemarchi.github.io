@@ -61,21 +61,6 @@ function initScrollAnimations() {
     elements.forEach(el => observer.observe(el));
 }
 
-function checkBurgerMenu() {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav');
-    
-    if (!burger || !nav) return;
-    
-    if (window.innerWidth < 768) {
-        burger.style.display = 'flex';
-        nav.style.display = 'none';
-    } else {
-        burger.style.display = 'none';
-        nav.style.display = 'block';
-    }
-}
-
 window.addEventListener('resize', function() {
     checkBurgerMenu();
 });
