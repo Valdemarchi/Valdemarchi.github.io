@@ -289,3 +289,9 @@
         display: block !important;
     }
 }
+/* Для мобилок */
+@media (max-width: 767px) {
+    .burger {
+        display: flex !important;
+    }
+}
